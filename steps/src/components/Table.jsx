@@ -1,4 +1,4 @@
-const Table = ({form, dateText, distanceText, action}) => {
+const Table = ({form, dateText, distanceText, action, onRemove}) => {
     return(
         <div className="table">
             <div className="text">            
@@ -7,13 +7,11 @@ const Table = ({form, dateText, distanceText, action}) => {
                 <div className="action">{action}</div>
             </div>
             <div className="addFields">
-                <input value={form.addDate} readonly/>
-                <input value={form.addDistance} readonly/>
-                {/* <div>{form.addDate}</div>
-                <div>{form.addDistance}</div> */}
-                <div>
-                    <button>Del</button>
-                    <button>Correct</button>
+                <input value={form.addDate.replace(/([0-9]+)\-([0-9]+)\-([0-9]+)/,"$3.$2.$1")} readOnly/>
+                <input value={form.addDistance} readOnly/>
+                <div className="tools">
+                    <button onClick={onRemove}>&#9998;</button>
+                    <button>&#10006;</button>
                 </div>
             </div>
         </div>

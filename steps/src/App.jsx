@@ -9,6 +9,7 @@ function App() {
     date: '',
     distance: '',
     table: {
+      id: 0,
       addDate: '',
       addDistance: ''
     }
@@ -22,16 +23,27 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const {date, distance} = form;
+
     setForm({
       date: '',
       distance: '',
       table: {
+        id: Date.now(),
         addDate: date,
         addDistance: distance
       }
     })
+    console.log(form);
   }
-
+  
+  const remove = (e) => {
+    e.preventDefault();
+    const {addDate, addDistance} = form.table;
+    setForm({
+      addDate: '',
+      addDistance: ''
+    })
+  }
 
   const dateText = 'Дата (ДД.ММ.ГГ)';
   const distanceText = 'Пройдено км';
@@ -45,7 +57,7 @@ function App() {
           <InputNumber distance={form.distance} setDistance={handleInput} distanceText={distanceText}/>
           <button type='submit'>OK</button>
         </form>
-        <Table form={form.table} dateText={dateText} distanceText={distanceText} action={action}/>
+        <Table form={form.table} dateText={dateText} distanceText={distanceText} action={action} onRemove={remove}/>
       </div>
     </div>
   )

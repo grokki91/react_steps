@@ -4,7 +4,7 @@ const InputData = ({date, setDate, dateText}) => {
         <>
             <label>
                 <div>{dateText}</div>
-                <input type='text' name="date" value={date} onChange={setDate}/>
+                <input type='date' name="date" value={date} onChange={setDate} />
             </label>
         </>
     );

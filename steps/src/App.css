@@ -28,6 +28,10 @@ input {
     text-align: center;
 }
 
+input:focus-visible {
+    outline: none;
+}
+
 button {
     height: 50px;
     width: 50px;
@@ -42,12 +46,17 @@ input, button {
 
 button:hover {
     transform: scale(0.96, 0.96);
-    transition: all 0.8s step-end;
+    transition: all 0.1s step-end;
 }
 
 .table {
     margin-top: 20px;
     width: 100%;
+}
+.addFields {
+    margin-top: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
 }
 
 .text, .addFields {
@@ -56,11 +65,28 @@ button:hover {
 }
 
 .addFields input{
+    text-align: left;
+    padding-left: 20px;
     border: none;
 }
 
-.addFields input:focus,
-.addFields input:focus:focus-visible {
+.addFields input:focus-visible {
     border: none;
+    outline: none;
     user-select: none;
+}
+
+.tools {
+    display: flex;
+}
+
+.tools button {
+    border: none;
+    outline: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
 }
