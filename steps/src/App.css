@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 470px;
+}
+
+.add {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+input {
+    height: 50px;
+    width: 200px;
+    text-align: center;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    cursor: pointer;
+}
+
+input, button {
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+button:hover {
+    transform: scale(0.96, 0.96);
+    transition: all 0.8s step-end;
+}
+
+.table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.text, .addFields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addFields input{
+    border: none;
+}
+
+.addFields input:focus,
+.addFields input:focus:focus-visible {
+    border: none;
+    user-select: none;
+}
